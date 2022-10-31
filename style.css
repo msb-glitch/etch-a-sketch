@@ -2,5 +2,21 @@
     box-sizing: border-box;
 }
 body{
+
     background: tan;
+}
+.content{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+#grid{
+    display:flex;
+    border: 1px solid black;
+}
+.gridbox{
+    border: 1px solid green;
+    background-color: red;
 }

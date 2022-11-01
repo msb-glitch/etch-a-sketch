@@ -1,5 +1,5 @@
-const grid = document.querySelector('#grid');
-const gridBox = '<div class="gridbox">&nbsp;</div>';
+const grid = document.querySelector('.grid');
+const gridBox = '<div class="gridbox"></div>';
 
 let gridDimension = 16;
 

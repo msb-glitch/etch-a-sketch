@@ -11,7 +11,7 @@ let gridHeight = grid.offsetHeight;
 
 for (let columnCount = 0; columnCount < gridDimension; columnCount++) {
     for (let rowCount = 0; rowCount < gridDimension; rowCount++) {
-        grid.appendChild(createGridBox(gridWidth / gridDimension));
+        grid.appendChild(createGridBox((gridWidth)/ (gridDimension +1))); // figure out why + 1 makes the right grid size
     }
 }
 

@@ -2,7 +2,7 @@ const grid = document.querySelector('.grid');
 const gridBox = document.createElement('div')
 gridBox.className = 'gridbox';
 
-let gridDimension = 16;
+let gridDimension = 12;
 let gridWidth = grid.offsetWidth;
 let gridHeight = grid.offsetHeight;
 

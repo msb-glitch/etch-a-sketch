@@ -23,7 +23,10 @@ body{
     display:flex;
     border: 1px solid black;
     width: 600px;
-    flex-wrap: wrap;
+    height: 600px;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
 }
 .gridbox{
     border: 1px solid green;

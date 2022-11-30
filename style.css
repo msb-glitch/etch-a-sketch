@@ -32,9 +32,15 @@ body{
     border: 1px solid green;
     background-color: red;
 }
+.filledin{
+    background-color: blue;
+}
+
 .testarea{
     background-color:aqua;
     display: flex;
     justify-content: space-around;
     width: 400px;
+    margin-top: 20px;
+    padding: 20px;
 }

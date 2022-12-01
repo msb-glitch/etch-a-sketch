@@ -1,8 +1,8 @@
 const grid = document.querySelector('.grid');
 
+let bgColor = 'green';
 
-
-let gridDimension = 18; // doesn't display right at numbers lower than ~8
+let gridDimension = 17; // doesn't display right at 2 or lower; 19 or higher
 let gridWidth = grid.offsetWidth;
 let gridHeight = grid.offsetHeight;
 
@@ -11,16 +11,19 @@ let gridHeight = grid.offsetHeight;
 
 for (let columnCount = 0; columnCount < gridDimension; columnCount++) {
     for (let rowCount = 0; rowCount < gridDimension; rowCount++) {
-        grid.appendChild(createGridBox((gridWidth) / (gridDimension + 1))); // figure out why + 1 makes the right grid size
+        grid.appendChild(createGridBox((gridWidth) / (gridDimension ), rowCount + 1)); 
+        
     }
 }
 
-function createGridBox(size) {
+function createGridBox(size, number) { //add number to have box count in box
     const newBox = document.createElement('div');
     newBox.className = 'gridbox';
-    newBox.style.width = `${size}px`;
-    newBox.style.height = `${size}px`;
-
+    newBox.style.width = `${size - 2}px`;
+    newBox.style.height = `${size - 2}px`;
+    if (number){
+        newBox.textContent = number;
+    }
     return newBox;
 }
 
@@ -28,7 +31,7 @@ const gridBox = document.querySelectorAll('.gridbox'); // get all boxes in the g
 
 gridBox.forEach(box => {
     box.addEventListener('mouseover', () =>{
-        box.classList.add('filledin');
+        box.style.backgroundColor = bgColor;
     })
 })
 

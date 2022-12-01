@@ -25,7 +25,8 @@ body{
     width: 600px;
     height: 600px;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 2px;
 
 }
 .gridbox{

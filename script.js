@@ -2,7 +2,7 @@ const grid = document.querySelector('.grid');
 
 let bgColor = 'green';
 
-let gridDimension = 17; // doesn't display right at 2 or lower; 19 or higher
+let gridDimension = 18; // doesn't display right at 2 or lower; 19 or higher
 let gridWidth = grid.offsetWidth;
 let gridHeight = grid.offsetHeight;
 
@@ -28,6 +28,13 @@ function createGridBox(size, number) { //add number to have box count in box
 }
 
 const gridBox = document.querySelectorAll('.gridbox'); // get all boxes in the grid
+
+//things to add
+//  click mode
+//  or click to erase
+//  color picker
+//  rainbow mode
+//  shimmering rainbow
 
 gridBox.forEach(box => {
     box.addEventListener('mouseover', () =>{

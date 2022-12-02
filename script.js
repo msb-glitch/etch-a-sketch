@@ -11,8 +11,8 @@ let gridHeight = grid.offsetHeight;
 
 for (let columnCount = 0; columnCount < gridDimension; columnCount++) {
     for (let rowCount = 0; rowCount < gridDimension; rowCount++) {
-        grid.appendChild(createGridBox((gridWidth) / (gridDimension ), rowCount + 1)); 
-        
+        grid.appendChild(createGridBox((gridWidth) / (gridDimension), rowCount + 1));
+
     }
 }
 
@@ -21,7 +21,7 @@ function createGridBox(size, number) { //add number to have box count in box
     newBox.className = 'gridbox';
     newBox.style.width = `${size - 2}px`;
     newBox.style.height = `${size - 2}px`;
-    if (number){
+    if (number) {
         newBox.textContent = number;
     }
     return newBox;
@@ -37,7 +37,7 @@ const gridBox = document.querySelectorAll('.gridbox'); // get all boxes in the g
 //  shimmering rainbow
 
 gridBox.forEach(box => {
-    box.addEventListener('mouseover', () =>{
+    box.addEventListener('mouseover', () => {
         box.style.backgroundColor = bgColor;
     })
 })
@@ -47,33 +47,29 @@ gridBox.forEach(box => {
 Coloris({
     el: '.coloris',
     swatches: [
-      '#264653',
-      '#2a9d8f',
-      '#e9c46a',
-      '#f4a261',
-      '#e76f51',
-      '#d62828',
-      '#023e8a',
-      '#0077b6',
-      '#0096c7',
-      '#00b4d8',
-      `${bodyBackgroundColor}`
-    ]
-  });
-
-  /** Instances **/
-
-
-  Coloris.setInstance('.instance3', {
+        '#264653',
+        '#2a9d8f',
+        '#e9c46a',
+        '#f4a261',
+        '#e76f51',
+        '#d62828',
+        '#023e8a',
+        '#0077b6',
+        '#0096c7',
+        '#00b4d8',
+        `${bodyBackgroundColor}`,
+    ],
     theme: 'polaroid',
     swatchesOnly: true
-  });
+
+});
+
+
 
 
 document.addEventListener('coloris:pick', event => {
-    console.log('New color', event.detail.color);
     bgColor = event.detail.color;
-  });
+});
 
 //test info
 

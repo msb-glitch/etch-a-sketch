@@ -1,7 +1,7 @@
 const grid = document.querySelector('.grid');
 
-let bgColor = 'green';
-
+let bgColor = '#00b4d8';
+const bodyBackgroundColor = window.getComputedStyle(document.body, null).getPropertyValue('background-color');
 let gridDimension = 18; // doesn't display right at 2 or lower; 19 or higher
 let gridWidth = grid.offsetWidth;
 let gridHeight = grid.offsetHeight;
@@ -42,7 +42,38 @@ gridBox.forEach(box => {
     })
 })
 
+/** Default configuration **/
 
+Coloris({
+    el: '.coloris',
+    swatches: [
+      '#264653',
+      '#2a9d8f',
+      '#e9c46a',
+      '#f4a261',
+      '#e76f51',
+      '#d62828',
+      '#023e8a',
+      '#0077b6',
+      '#0096c7',
+      '#00b4d8',
+      `${bodyBackgroundColor}`
+    ]
+  });
+
+  /** Instances **/
+
+
+  Coloris.setInstance('.instance3', {
+    theme: 'polaroid',
+    swatchesOnly: true
+  });
+
+
+document.addEventListener('coloris:pick', event => {
+    console.log('New color', event.detail.color);
+    bgColor = event.detail.color;
+  });
 
 //test info
 

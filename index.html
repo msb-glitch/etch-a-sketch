@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-A-Sketch</title>
     <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="coloris/coloris.min.css"/>
+    <script src="coloris/coloris.min.js"></script>
 </head>
 
 <body>
@@ -15,7 +17,12 @@
             Header
         </div>
         <div class="playarea">
-            <div class="leftside">Left</div>
+            <div class="leftside">
+                <div class="example full">
+                    <p>Pick a color</p>
+                    <input type="text" class="coloris instance3" value="#00b4d8">
+                  </div>
+            </div>
             <div class="grid"></div>
             <div class="rightside">Right</div>
         </div>

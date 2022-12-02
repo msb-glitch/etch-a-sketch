@@ -18,7 +18,7 @@ function createGridBox(size, number) { //add number to have box count in box
     for (let i = 0; i < size * size; i++){
         gridBox[i] = document.createElement('div')
         gridBox[i].classList.add('gridbox');
-        gridBox[i].textContent = i;
+        
         grid.appendChild(gridBox[i]);
         
     }

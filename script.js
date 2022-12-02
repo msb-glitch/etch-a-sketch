@@ -69,13 +69,3 @@ document.addEventListener('coloris:pick', event => {
     bgColor = event.detail.color;
 });
 
-//test info
-
-document.querySelector('.gridwidth').textContent = gridWidth;
-
-document.querySelector('.gridheight').textContent = gridHeight;
-
-/*let gridBoxWidth = document.querySelector('.gridbox').offsetWidth;
-document.querySelector('.gridboxwidth').textContent = gridBoxWidth;
-let gridBoxHeight = document.querySelector('.gridbox').offsetHeight;
-document.querySelector('.gridboxheight').textContent = gridBoxHeight;*/

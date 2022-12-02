@@ -2,30 +2,48 @@ const grid = document.querySelector('.grid');
 let gridBox = [];
 let bgColor = '#00b4d8';
 const bodyBackgroundColor = window.getComputedStyle(document.body, null).getPropertyValue('background-color');
-let gridDimension = 20; // doesn't display right at 2 or lower; 19 or higher
+let gridDimension = 8;
 let gridWidth = grid.offsetWidth;
 let gridHeight = grid.offsetHeight;
+let colorMode = document.querySelector('input[name=colorModeRadio]:checked').value;
+
 
 // set up grid box size
 // add correct number of boxes to grid in row and column
 
-createGridBox(gridDimension)
-
+createGridBox(gridDimension);
+changeColorMode(colorMode, '');
 function createGridBox(size, number) { //add number to have box count in box
-    
+
     grid.style.gridTemplateColumns = (`repeat(${size}, 1fr`);
     grid.style.gridTemplateRows = (`repeat(${size}, 1fr`);
-    for (let i = 0; i < size * size; i++){
+    for (let i = 0; i < size * size; i++) {
         gridBox[i] = document.createElement('div')
         gridBox[i].classList.add('gridbox');
-        
+
         grid.appendChild(gridBox[i]);
-        
+
     }
-    
+
+}
+function changeColorMode(newEvent, oldEvent) { 
+    gridBox.forEach(box => {
+        box.removeEventListener(oldEvent, fillSquare);
+        box.addEventListener(newEvent, fillSquare);
+    })
 }
 
-//const gridBox = document.querySelectorAll('.gridbox'); // get all boxes in the grid
+function fillSquare(){
+    this.style.backgroundColor = bgColor;
+}
+
+modePicker.addEventListener('click', () => {
+    oldColorMode = colorMode;
+    newColorMode = document.querySelector('input[name=colorModeRadio]:checked').value;
+    changeColorMode(newColorMode, oldColorMode);
+    colorMode = newColorMode;
+
+});
 
 //things to add
 //  click mode
@@ -34,11 +52,7 @@ function createGridBox(size, number) { //add number to have box count in box
 //  rainbow mode
 //  shimmering rainbow
 
-gridBox.forEach(box => {
-    box.addEventListener('mouseover', () => {
-        box.style.backgroundColor = bgColor;
-    })
-})
+
 
 /** Default configuration **/
 
@@ -58,6 +72,7 @@ Coloris({
         `${bodyBackgroundColor}`,
     ],
     theme: 'polaroid',
+    defaultColor: `${bgColor}`,
     swatchesOnly: true
 
 });

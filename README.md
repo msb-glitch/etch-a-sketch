@@ -5,4 +5,4 @@ Link: https://www.theodinproject.com/lessons/foundations-etch-a-sketch
 
 Building a rudimentary pixel sketchpad using HTML, CSS, and javascript.
 
-The color picking widget is Coloris: https://github.com/mdbassit/Coloris/
+The color picking widget is Coloris, used under MIT License: https://github.com/mdbassit/Coloris/

@@ -55,7 +55,7 @@ body{
     margin-bottom: 30px;
     
   }
-  input {
+  .colorpicker input {
     width: 100px;
     height: 32px;
     padding: 0 10px;

@@ -32,7 +32,7 @@ const gridBox = document.querySelectorAll('.gridbox'); // get all boxes in the g
 //things to add
 //  click mode
 //  or click to erase
-//  color picker
+
 //  rainbow mode
 //  shimmering rainbow
 

@@ -47,13 +47,14 @@ body{
 }
 
 /* coloris */
-.example {
+.colorpicker {
     flex-shrink: 0;
-    width: 300px;
+    width: 200px;
     margin-bottom: 30px;
+    
   }
   input {
-    width: 150px;
+    width: 100px;
     height: 32px;
     padding: 0 10px;
     border: 1px solid #ccc;

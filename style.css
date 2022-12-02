@@ -20,18 +20,20 @@ body{
     flex-direction: row;
 }
 .grid{
-    display:flex;
+    display:grid;
     border: 1px solid black;
     width: 600px;
     height: 600px;
     flex-flow: row wrap;
-    justify-content: space-between;
-    padding: 2px;
+    justify-content: space-around;
+    
+    
 
 }
 .gridbox{
-    border: 1px solid green;
+    
     background-color: none;
+    border: 1px solid red;
 }
 .filledin{
     background-color: blue;

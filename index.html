@@ -25,17 +25,22 @@
                 <div class="modepicker">
                     Coloring mode:
                     <form name="modePicker">
-                        <input type="radio" name="colorModeRadio" checked="checked" value="mouseover"/>
-                        <label for="radio1">Hover</label>
-                        <input type="radio" name="colorModeRadio" value="click"/>
-                        <label for="radio2">Click</label>
+                        <label for="mouseover"><input type="radio" id="mouseover" name="colorModeRadio"
+                                checked="checked" value="mouseover" />
+                            Hover</label>
+                        <label for="click"><input type="radio" id="click" name="colorModeRadio" value="click" />
+                            Click</label>
                     </form>
-                    
-
                 </div>
+
                 <div class="colorpicker full">
                     <p>Pick a color:</p>
                     <input type="text" class="coloris" value="#00b4d8">
+                </div>
+                <div class="erasemode">
+                    <form>
+                        <label><input type="checkbox" id="erasemodecheckbox" name="erasemodecheckbox">Erase mode?</label>
+                    </form>
                 </div>
             </div>
             <div class="rightside">
@@ -45,10 +50,10 @@
                     <output>Grid size: 25 x 25</output>
                 </div>
             </div>
-            
+
         </div>
         <div class="footer">
-            
+
         </div>
     </div>
 </body>

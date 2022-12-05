@@ -48,7 +48,11 @@ function fillSquare() {
 gridSlider.addEventListener('change', () => {
     gridDimension = gridSlider.value;
     createGridBox(gridDimension);
-    document.querySelector('.slider output').textContent = gridSlider.value;
+    document.querySelector('.slider output').textContent = `Grid size: ${gridSlider.value} x ${gridSlider.value}`;
+    if (gridSlider.value >= 25){
+        //NEED to add classes to fix padding at large number of gridboxes
+        console.log(gridSlider.value);
+    }
 });
 
 modePicker.addEventListener('click', () => {
@@ -62,7 +66,7 @@ modePicker.addEventListener('click', () => {
 
 
 //things to add
-//  click mode
+
 //  or click to erase
 
 //  rainbow mode

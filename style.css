@@ -69,6 +69,16 @@
      padding: 20px;
  }
 
+ /*slider styling*/
+ .slider{
+    display: flex;
+    justify-content: space-between;
+ }
+ .slider input {
+     width: 350px;
+     
+ }
+
  /* coloris */
  .colorpicker {
      flex-shrink: 0;

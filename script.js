@@ -7,6 +7,16 @@ let gridDimension = gridSlider.value;
 let gridWidth = grid.offsetWidth;
 let gridHeight = grid.offsetHeight;
 let colorMode = document.querySelector('input[name=colorModeRadio]:checked').value;
+const eraseMode = document.querySelector('input[name=erasemodecheckbox');
+
+eraseMode.addEventListener('change', ()=>{
+    if(eraseMode.checked){
+        bgColor = bodyBackgroundColor;
+    }
+    else{
+        console.log('unchecked');
+    }
+})
 
 
 
@@ -105,5 +115,6 @@ Coloris({
 
 document.addEventListener('coloris:pick', event => {
     bgColor = event.detail.color;
+    eraseMode.checked = false;
 });
 

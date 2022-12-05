@@ -2,10 +2,11 @@ const grid = document.querySelector('.grid');
 let gridBox = [];
 let bgColor = '#00b4d8';
 const bodyBackgroundColor = window.getComputedStyle(document.body, null).getPropertyValue('background-color');
-let gridDimension = 8;
+let gridDimension = document.querySelector("input[name=gridSlider]").value;
 let gridWidth = grid.offsetWidth;
 let gridHeight = grid.offsetHeight;
 let colorMode = document.querySelector('input[name=colorModeRadio]:checked').value;
+
 
 
 // set up grid box size
@@ -13,7 +14,7 @@ let colorMode = document.querySelector('input[name=colorModeRadio]:checked').val
 
 createGridBox(gridDimension);
 changeColorMode(colorMode, '');
-function createGridBox(size, number) { //add number to have box count in box
+function createGridBox(size) { //add number to have box count in box
 
     grid.style.gridTemplateColumns = (`repeat(${size}, 1fr`);
     grid.style.gridTemplateRows = (`repeat(${size}, 1fr`);

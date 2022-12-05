@@ -21,7 +21,7 @@ createGridBox(gridDimension);
 
 
 function createGridBox(size) { //add number to have box count in box
-    removeGridBoxes(grid);
+    removeGridBoxes();
     grid.style.gridTemplateColumns = (`repeat(${size}, 1fr`);
     grid.style.gridTemplateRows = (`repeat(${size}, 1fr`);
     for (let i = 0; i < size * size; i++) {
@@ -34,20 +34,22 @@ function createGridBox(size) { //add number to have box count in box
     changeColorMode(colorMode, '');
 
 }
+
 function changeColorMode(newEvent, oldEvent) {
     gridBox.forEach(box => {
         box.removeEventListener(oldEvent, fillSquare);
         box.addEventListener(newEvent, fillSquare);
     })
+}
 
-    //add stuff for erase mode
-    // both click and hover
+function removeGridBoxes() {
+    //need to fix; broke with margin changes in gridSlider.addEventListener
+    gridBox.forEach(box => {
+        box.remove();
+    })
+    
 }
-function removeGridBoxes(parent) {
-    while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
-    }
-}
+
 function fillSquare() {
     this.style.backgroundColor = bgColor;
 }
@@ -56,17 +58,27 @@ gridSlider.addEventListener('change', () => {
     gridDimension = gridSlider.value;
     createGridBox(gridDimension);
     document.querySelector('.slider output').textContent = `Grid size: ${gridSlider.value} x ${gridSlider.value}`;
-    if (gridSlider.value >= 25){
-        //NEED to add classes to fix padding at large number of gridboxes
-        console.log(gridSlider.value);
+    
+    if (gridSlider.value > 25) {
+        
+        gridBox.forEach(el => {
+            el.style.margin = '0.5px';
+        });
+
+        
+    }
+    else{
+        gridBox.forEach(el => {
+            el.style.margin = '2px';
+        });
     }
 });
 
-eraseMode.addEventListener('change', ()=>{
-    if(eraseMode.checked){
+eraseMode.addEventListener('change', () => {
+    if (eraseMode.checked) {
         bgColor = bodyBackgroundColor;
     }
-    else{
+    else {
         bgColor = lastPickedColor;
     }
 })
@@ -79,10 +91,12 @@ modePicker.addEventListener('click', () => {
 
 });
 
-startOver.addEventListener('click', ()=>{
+startOver.addEventListener('click', () => {
+    
     createGridBox(gridDimension);
     eraseMode.checked = false;
     bgColor = lastPickedColor;
+    console.log('clicked');
 })
 
 

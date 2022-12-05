@@ -75,10 +75,11 @@ input{
  .gridbox {
 
      background-color: none;
-     border: 2px dotted gray;
+     border: 1px dotted gray;
      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
      margin: 2px;
  }
+ 
 
  .filledin {
      background-color: blue;

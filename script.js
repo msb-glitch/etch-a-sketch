@@ -35,6 +35,9 @@ function changeColorMode(newEvent, oldEvent) {
         box.removeEventListener(oldEvent, fillSquare);
         box.addEventListener(newEvent, fillSquare);
     })
+
+    //add stuff for erase mode
+    // both click and hover
 }
 function removeGridBoxes(parent) {
     while (parent.firstChild) {

@@ -13,10 +13,13 @@
      font-size: 2em;
  }
 
+ .header h1 {
+     font-size: 2.4em;
+     font-weight: 400;
+
+ }
+
  .header {
-
-
-     font-size: 3em;
      margin-bottom: 20px;
  }
 
@@ -88,9 +91,10 @@
      /* Chrome, Safari, Opera */
      transform: scale(2);
  }
- .modepicker form{
-    display:flex;
-    flex-direction: column;
+
+ .modepicker form {
+     display: flex;
+     flex-direction: column;
  }
 
  /* coloris */

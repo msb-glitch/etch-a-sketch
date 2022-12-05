@@ -4,7 +4,7 @@
      box-sizing: border-box;
      margin: 0;
      padding: 0;
-
+     outline: none;
  }
 
  body {
@@ -36,15 +36,15 @@
 
  .grid {
      display: grid;
-     border: 6px solid black;
+     border: 6px dotted black;
      box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, .2);
      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
      width: 600px;
      height: 600px;
      flex-flow: row wrap;
      justify-content: space-around;
-    padding: 10px;
-    margin-bottom: 20px;
+     padding: 10px;
+     margin-bottom: 20px;
 
  }
 

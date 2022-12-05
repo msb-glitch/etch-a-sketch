@@ -12,7 +12,9 @@
      background: lightskyblue;
      font-size: 2em;
  }
-
+input{
+    cursor: pointer;
+}
  .header {
      display: flex;
  }
@@ -31,10 +33,14 @@
  .content .leftside {
      flex-basis: 19%;
  }
+ .content .leftside{
+    display:flex;
+    flex-direction: column;
+ }
 
  .header .rightside {
      flex-basis: content;
-     
+
      width: 600px;
  }
 
@@ -107,8 +113,8 @@
      transform: scale(2);
      margin-right: 20px;
      vertical-align: middle;
-     
-     
+
+
  }
 
  .modepicker form {
@@ -117,21 +123,48 @@
      margin-bottom: 40px;
      margin-left: 5px;
  }
- .modepicker label{
-    margin-bottom: 10px;
+
+ .modepicker label {
+     margin-bottom: 10px;
  }
 
-.erasemode input[type="checkbox"]{
-    -ms-transform: scale(2);
-    /* IE 9 */
-    -webkit-transform: scale(2);
-    /* Chrome, Safari, Opera */
-    transform: scale(2);
-    margin-right: 20px;
-    vertical-align: middle;
-    margin-left: 4px;
-}
+ /* erasemode checkbox */
 
+ .erasemode input[type="checkbox"] {
+     -ms-transform: scale(2);
+     /* IE 9 */
+     -webkit-transform: scale(2);
+     /* Chrome, Safari, Opera */
+     transform: scale(2);
+     margin-right: 20px;
+     vertical-align: middle;
+     margin-left: 4px;
+     
+ }
+ .erasemode{
+    margin-bottom: auto;
+ }
+ 
+/* startover button */
+ .startover button {
+     align-self: flex-end;
+     background: transparent;
+     padding: 10px;
+     font-family: 'Amatic SC', cursive;
+     margin-bottom: 60px;
+     transition: all .5s ease;
+     color: black;
+     font-size: 1em;
+     letter-spacing: 1px;
+     outline: none;
+     box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, .2);
+     border: 2px solid black;
+     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+ }
+ .startover button:hover{
+    box-shadow:2px 8px 4px -6px hsla(0,0%,0%,.3);
+    cursor:pointer;
+ }
 
  /* coloris */
  .colorpicker {

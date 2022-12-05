@@ -1,6 +1,7 @@
 const grid = document.querySelector('.grid');
 let gridBox = [];
 let bgColor = '#00b4d8';
+let lastPickedColor = bgColor;
 const bodyBackgroundColor = window.getComputedStyle(document.body, null).getPropertyValue('background-color');
 const gridSlider = document.querySelector("input[name=gridSlider]");
 let gridDimension = gridSlider.value;
@@ -8,7 +9,7 @@ let gridWidth = grid.offsetWidth;
 let gridHeight = grid.offsetHeight;
 let colorMode = document.querySelector('input[name=colorModeRadio]:checked').value;
 const eraseMode = document.querySelector('input[name=erasemodecheckbox');
-
+const startOver = document.querySelector('.startover button');
 
 
 
@@ -66,7 +67,7 @@ eraseMode.addEventListener('change', ()=>{
         bgColor = bodyBackgroundColor;
     }
     else{
-        console.log('unchecked');
+        bgColor = lastPickedColor;
     }
 })
 
@@ -77,6 +78,12 @@ modePicker.addEventListener('click', () => {
     colorMode = newColorMode;
 
 });
+
+startOver.addEventListener('click', ()=>{
+    createGridBox(gridDimension);
+    eraseMode.checked = false;
+    bgColor = lastPickedColor;
+})
 
 
 
@@ -117,6 +124,7 @@ Coloris({
 
 document.addEventListener('coloris:pick', event => {
     bgColor = event.detail.color;
+    lastPickedColor = event.detail.color;
     eraseMode.checked = false;
 });
 

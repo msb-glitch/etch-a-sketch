@@ -70,13 +70,27 @@
  }
 
  /*slider styling*/
- .slider{
-    display: flex;
-    justify-content: space-between;
+ .slider {
+     display: flex;
+     justify-content: space-between;
  }
+
  .slider input {
      width: 350px;
-     
+
+ }
+
+ /* mode picker */
+ .modepicker input[type="radio"] {
+     -ms-transform: scale(2);
+     /* IE 9 */
+     -webkit-transform: scale(2);
+     /* Chrome, Safari, Opera */
+     transform: scale(2);
+ }
+ .modepicker form{
+    display:flex;
+    flex-direction: column;
  }
 
  /* coloris */

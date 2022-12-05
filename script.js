@@ -14,7 +14,7 @@ let colorMode = document.querySelector('input[name=colorModeRadio]:checked').val
 // add correct number of boxes to grid in row and column
 
 createGridBox(gridDimension);
-changeColorMode(colorMode, '');
+
 
 function createGridBox(size) { //add number to have box count in box
     removeGridBoxes(grid);
@@ -27,6 +27,7 @@ function createGridBox(size) { //add number to have box count in box
         grid.appendChild(gridBox[i]);
 
     }
+    changeColorMode(colorMode, '');
 
 }
 function changeColorMode(newEvent, oldEvent) {
@@ -47,6 +48,7 @@ function fillSquare() {
 gridSlider.addEventListener('change', () => {
     gridDimension = gridSlider.value;
     createGridBox(gridDimension);
+    document.querySelector('.slider output').textContent = gridSlider.value;
 });
 
 modePicker.addEventListener('click', () => {
@@ -56,6 +58,8 @@ modePicker.addEventListener('click', () => {
     colorMode = newColorMode;
 
 });
+
+
 
 //things to add
 //  click mode

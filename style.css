@@ -1,73 +1,96 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-body{
+ @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
 
-    background: tan;
-}
-.content{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    
-}
-.playarea{
-    display:flex;
-    flex-direction: row;
-}
-.grid{
-    display:grid;
-    border: 1px solid black;
-    width: 600px;
-    height: 600px;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    
-    
+ * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
 
-}
-.gridbox{
-    
-    background-color: none;
-    border: 1px solid red;
-}
-.filledin{
-    background-color: blue;
-}
+ }
 
-.testarea{
-    background-color:aqua;
-    display: flex;
-    justify-content: space-around;
-    width: 400px;
-    margin-top: 20px;
-    padding: 20px;
-}
+ body {
+     font-family: 'Amatic SC', cursive;
+     background: lightskyblue;
+     font-size: 2em;
+ }
 
-/* coloris */
-.colorpicker {
-    flex-shrink: 0;
-    width: 200px;
-    margin-bottom: 30px;
-    
-  }
-  .colorpicker input {
-    width: 100px;
-    height: 32px;
-    padding: 0 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    box-sizing: border-box;
-  }
-  .full .clr-field button {
-    width: 100%;
-    height: 100%;
-    border-radius: 5px;
-  }
+ .header {
+
+
+     font-size: 3em;
+     margin-bottom: 10px;
+ }
+
+ .content {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     min-height: 100vh;
+
+ }
+
+ .playarea {
+     display: flex;
+     flex-direction: row;
+ }
+
+ .grid {
+     display: grid;
+     border: 6px solid black;
+     box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, .2);
+     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+     width: 600px;
+     height: 600px;
+     flex-flow: row wrap;
+     justify-content: space-around;
+    padding: 10px;
+
+
+ }
+
+ .gridbox {
+
+     background-color: none;
+     border: 1px solid yellow;
+     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+     margin: 2px;
+ }
+
+ .filledin {
+     background-color: blue;
+ }
+
+ .testarea {
+     background-color: aqua;
+     display: flex;
+     justify-content: space-around;
+     width: 400px;
+     margin-top: 20px;
+     padding: 20px;
+ }
+
+ /* coloris */
+ .colorpicker {
+     flex-shrink: 0;
+     width: 200px;
+     margin-bottom: 30px;
+
+ }
+
+ .colorpicker input {
+     width: 100px;
+     height: 32px;
+     padding: 0 10px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     font-family: inherit;
+     font-size: inherit;
+     font-weight: inherit;
+     box-sizing: border-box;
+ }
+
+ .full .clr-field button {
+     width: 100%;
+     height: 100%;
+     border-radius: 5px;
+ }

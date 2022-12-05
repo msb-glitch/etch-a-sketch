@@ -2,7 +2,8 @@ const grid = document.querySelector('.grid');
 let gridBox = [];
 let bgColor = '#00b4d8';
 const bodyBackgroundColor = window.getComputedStyle(document.body, null).getPropertyValue('background-color');
-let gridDimension = document.querySelector("input[name=gridSlider]").value;
+const gridSlider = document.querySelector("input[name=gridSlider]");
+let gridDimension = gridSlider.value;
 let gridWidth = grid.offsetWidth;
 let gridHeight = grid.offsetHeight;
 let colorMode = document.querySelector('input[name=colorModeRadio]:checked').value;
@@ -14,8 +15,9 @@ let colorMode = document.querySelector('input[name=colorModeRadio]:checked').val
 
 createGridBox(gridDimension);
 changeColorMode(colorMode, '');
-function createGridBox(size) { //add number to have box count in box
 
+function createGridBox(size) { //add number to have box count in box
+    removeGridBoxes(grid);
     grid.style.gridTemplateColumns = (`repeat(${size}, 1fr`);
     grid.style.gridTemplateRows = (`repeat(${size}, 1fr`);
     for (let i = 0; i < size * size; i++) {
@@ -27,16 +29,25 @@ function createGridBox(size) { //add number to have box count in box
     }
 
 }
-function changeColorMode(newEvent, oldEvent) { 
+function changeColorMode(newEvent, oldEvent) {
     gridBox.forEach(box => {
         box.removeEventListener(oldEvent, fillSquare);
         box.addEventListener(newEvent, fillSquare);
     })
 }
-
-function fillSquare(){
+function removeGridBoxes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+function fillSquare() {
     this.style.backgroundColor = bgColor;
 }
+
+gridSlider.addEventListener('change', () => {
+    gridDimension = gridSlider.value;
+    createGridBox(gridDimension);
+});
 
 modePicker.addEventListener('click', () => {
     oldColorMode = colorMode;

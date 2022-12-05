@@ -9,14 +9,7 @@ let gridHeight = grid.offsetHeight;
 let colorMode = document.querySelector('input[name=colorModeRadio]:checked').value;
 const eraseMode = document.querySelector('input[name=erasemodecheckbox');
 
-eraseMode.addEventListener('change', ()=>{
-    if(eraseMode.checked){
-        bgColor = bodyBackgroundColor;
-    }
-    else{
-        console.log('unchecked');
-    }
-})
+
 
 
 
@@ -68,6 +61,15 @@ gridSlider.addEventListener('change', () => {
     }
 });
 
+eraseMode.addEventListener('change', ()=>{
+    if(eraseMode.checked){
+        bgColor = bodyBackgroundColor;
+    }
+    else{
+        console.log('unchecked');
+    }
+})
+
 modePicker.addEventListener('click', () => {
     oldColorMode = colorMode;
     newColorMode = document.querySelector('input[name=colorModeRadio]:checked').value;
@@ -80,7 +82,7 @@ modePicker.addEventListener('click', () => {
 
 //things to add
 
-//  or click to erase
+
 
 //  rainbow mode
 //  shimmering rainbow

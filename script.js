@@ -16,11 +16,7 @@ const startOver = document.querySelector('.startover button');
 let rainbowMode = false;
 let colorIndex = 0;
 
-// set up grid box size
-// add correct number of boxes to grid in row and column
-
 createGridBox(gridDimension);
-
 
 function createGridBox(size) {
     removeGridBoxes();
@@ -29,12 +25,9 @@ function createGridBox(size) {
     for (let i = 0; i < size * size; i++) {
         gridBox[i] = document.createElement('div')
         gridBox[i].classList.add('gridbox');
-
         grid.appendChild(gridBox[i]);
-
     }
     changeColorMode(colorMode, '');
-
 }
 
 function changeColorMode(newEvent, oldEvent) {
@@ -48,7 +41,6 @@ function removeGridBoxes() {
     gridBox.forEach(box => {
         box.remove();
     })
-
 }
 
 function fillSquare() {
@@ -67,7 +59,7 @@ function fillSquare() {
         this.style.backgroundColor = bgColor;
     }
 }
-
+/* event listeners */
 gridSlider.addEventListener('change', () => {
     gridDimension = gridSlider.value;
     createGridBox(gridDimension);
@@ -118,18 +110,7 @@ startOver.addEventListener('click', () => {
 
 })
 
-
-
-//things to add
-
-
-
-//  rainbow mode
-//  shimmering rainbow
-
-
-
-/** Default configuration **/
+/* coloris setup */
 
 Coloris({
     el: '.coloris',

@@ -9,10 +9,11 @@ let gridDimension = gridSlider.value;
 let gridWidth = grid.offsetWidth;
 let gridHeight = grid.offsetHeight;
 let colorMode = document.querySelector('input[name=colorModeRadio]:checked').value;
-const eraseMode = document.querySelector('input[name=erasemodecheckbox');
+const eraseModeCheckbox = document.querySelector('input[name=erasemodecheckbox');
+const rainbowModeCheckbox = document.querySelector('input[name=rainbowmodecheckbox');
 const startOver = document.querySelector('.startover button');
 
-let rainbowMode = true;
+let rainbowMode = false;
 let colorIndex = 0;
 
 // set up grid box size
@@ -84,13 +85,17 @@ gridSlider.addEventListener('change', () => {
     }
 });
 
-eraseMode.addEventListener('change', () => {
-    if (eraseMode.checked) {
+eraseModeCheckbox.addEventListener('change', () => {
+    if (eraseModeCheckbox.checked) {
         bgColor = bodyBackgroundColor;
     }
     else {
         bgColor = lastPickedColor;
     }
+});
+rainbowModeCheckbox.addEventListener('change',()=>{
+    eraseModeCheckbox.checked = false;
+    rainbowMode = !rainbowMode;
 })
 
 modePicker.addEventListener('click', () => {
@@ -104,7 +109,9 @@ modePicker.addEventListener('click', () => {
 startOver.addEventListener('click', () => {
 
     createGridBox(gridDimension);
-    eraseMode.checked = false;
+    eraseModeCheckbox.checked = false;
+    rainbowModeCheckbox.checked = false;
+    rainbowMode = false;
     bgColor = lastPickedColor;
     console.log('clicked');
 })
@@ -137,6 +144,6 @@ Coloris({
 document.addEventListener('coloris:pick', event => {
     bgColor = event.detail.color;
     lastPickedColor = event.detail.color;
-    eraseMode.checked = false;
+    eraseModeCheckbox.checked = false;
 });
 

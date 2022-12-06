@@ -20,7 +20,7 @@ const startOver = document.querySelector('.startover button');
 createGridBox(gridDimension);
 
 
-function createGridBox(size) { //add number to have box count in box
+function createGridBox(size) { 
     removeGridBoxes();
     grid.style.gridTemplateColumns = (`repeat(${size}, 1fr`);
     grid.style.gridTemplateRows = (`repeat(${size}, 1fr`);

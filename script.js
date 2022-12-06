@@ -43,11 +43,10 @@ function changeColorMode(newEvent, oldEvent) {
 }
 
 function removeGridBoxes() {
-    //need to fix; broke with margin changes in gridSlider.addEventListener
     gridBox.forEach(box => {
         box.remove();
     })
-    
+
 }
 
 function fillSquare() {
@@ -58,16 +57,16 @@ gridSlider.addEventListener('change', () => {
     gridDimension = gridSlider.value;
     createGridBox(gridDimension);
     document.querySelector('.slider output').textContent = `Grid size: ${gridSlider.value} x ${gridSlider.value}`;
-    
+
     if (gridSlider.value > 25) {
-        
+
         gridBox.forEach(el => {
             el.style.margin = '0.5px';
         });
 
-        
+
     }
-    else{
+    else {
         gridBox.forEach(el => {
             el.style.margin = '2px';
         });
@@ -92,7 +91,7 @@ modePicker.addEventListener('click', () => {
 });
 
 startOver.addEventListener('click', () => {
-    
+
     createGridBox(gridDimension);
     eraseMode.checked = false;
     bgColor = lastPickedColor;

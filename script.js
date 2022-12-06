@@ -1,6 +1,7 @@
 const grid = document.querySelector('.grid');
 let gridBox = [];
-let bgColor = '#00b4d8';
+const rainbowColors = ['#ff0000', '#ff5300', '#ffa500', '#ffd200', '#ffff00', '#80c000', '#008000', '#004080', '#0000ff', '#2600c1', '#4b0082', 'pink', 'white', 'black'];
+let bgColor = '#ff0000';
 let lastPickedColor = bgColor;
 const bodyBackgroundColor = window.getComputedStyle(document.body, null).getPropertyValue('background-color');
 const gridSlider = document.querySelector("input[name=gridSlider]");
@@ -11,8 +12,8 @@ let colorMode = document.querySelector('input[name=colorModeRadio]:checked').val
 const eraseMode = document.querySelector('input[name=erasemodecheckbox');
 const startOver = document.querySelector('.startover button');
 
-
-
+let rainbowMode = true;
+let colorIndex = 0;
 
 // set up grid box size
 // add correct number of boxes to grid in row and column
@@ -20,7 +21,7 @@ const startOver = document.querySelector('.startover button');
 createGridBox(gridDimension);
 
 
-function createGridBox(size) { 
+function createGridBox(size) {
     removeGridBoxes();
     grid.style.gridTemplateColumns = (`repeat(${size}, 1fr`);
     grid.style.gridTemplateRows = (`repeat(${size}, 1fr`);
@@ -50,7 +51,20 @@ function removeGridBoxes() {
 }
 
 function fillSquare() {
-    this.style.backgroundColor = bgColor;
+    if (rainbowMode) {
+        while (colorIndex < rainbowColors.length) {
+            console.log(rainbowColors[colorIndex]);
+            this.style.backgroundColor = rainbowColors[colorIndex];
+            colorIndex++;
+            if (colorIndex === rainbowColors.length) {
+                colorIndex = 0;
+            }
+            break;
+        }
+    }
+    else {
+        this.style.backgroundColor = bgColor;
+    }
 }
 
 gridSlider.addEventListener('change', () => {
@@ -59,12 +73,9 @@ gridSlider.addEventListener('change', () => {
     document.querySelector('.slider output').textContent = `Grid size: ${gridSlider.value} x ${gridSlider.value}`;
 
     if (gridSlider.value > 25) {
-
         gridBox.forEach(el => {
             el.style.margin = '0.5px';
         });
-
-
     }
     else {
         gridBox.forEach(el => {
@@ -113,19 +124,7 @@ startOver.addEventListener('click', () => {
 
 Coloris({
     el: '.coloris',
-    swatches: [
-        '#264653',
-        '#2a9d8f',
-        '#e9c46a',
-        '#f4a261',
-        '#e76f51',
-        '#d62828',
-        '#023e8a',
-        '#0077b6',
-        '#0096c7',
-        '#00b4d8',
-        `${bodyBackgroundColor}`,
-    ],
+    swatches: rainbowColors,
     theme: 'polaroid',
     defaultColor: `${bgColor}`,
     swatchesOnly: true

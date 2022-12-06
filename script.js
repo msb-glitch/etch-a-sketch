@@ -54,7 +54,7 @@ function removeGridBoxes() {
 function fillSquare() {
     if (rainbowMode) {
         while (colorIndex < rainbowColors.length) {
-            console.log(rainbowColors[colorIndex]);
+
             this.style.backgroundColor = rainbowColors[colorIndex];
             colorIndex++;
             if (colorIndex === rainbowColors.length) {
@@ -87,13 +87,15 @@ gridSlider.addEventListener('change', () => {
 
 eraseModeCheckbox.addEventListener('change', () => {
     if (eraseModeCheckbox.checked) {
+        rainbowModeCheckbox.checked = false;
+        rainbowMode = false;
         bgColor = bodyBackgroundColor;
     }
     else {
         bgColor = lastPickedColor;
     }
 });
-rainbowModeCheckbox.addEventListener('change',()=>{
+rainbowModeCheckbox.addEventListener('change', () => {
     eraseModeCheckbox.checked = false;
     rainbowMode = !rainbowMode;
 })
@@ -113,7 +115,7 @@ startOver.addEventListener('click', () => {
     rainbowModeCheckbox.checked = false;
     rainbowMode = false;
     bgColor = lastPickedColor;
-    console.log('clicked');
+
 })
 
 
@@ -145,5 +147,7 @@ document.addEventListener('coloris:pick', event => {
     bgColor = event.detail.color;
     lastPickedColor = event.detail.color;
     eraseModeCheckbox.checked = false;
+    rainbowModeCheckbox.checked = false;
+    rainbowMode = false;
 });
 

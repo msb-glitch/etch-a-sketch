@@ -59,6 +59,11 @@ function fillSquare() {
         this.style.backgroundColor = bgColor;
     }
 }
+function resetCheckboxes() {
+    eraseModeCheckbox.checked = false;
+    rainbowModeCheckbox.checked = false;
+    rainbowMode = false;
+}
 /* event listeners */
 gridSlider.addEventListener('change', () => {
     gridDimension = gridSlider.value;
@@ -101,13 +106,9 @@ modePicker.addEventListener('click', () => {
 });
 
 startOver.addEventListener('click', () => {
-
     createGridBox(gridDimension);
-    eraseModeCheckbox.checked = false;
-    rainbowModeCheckbox.checked = false;
-    rainbowMode = false;
+    resetCheckboxes();
     bgColor = lastPickedColor;
-
 })
 
 /* coloris setup */
@@ -121,14 +122,9 @@ Coloris({
 
 });
 
-
-
-
 document.addEventListener('coloris:pick', event => {
     bgColor = event.detail.color;
     lastPickedColor = event.detail.color;
-    eraseModeCheckbox.checked = false;
-    rainbowModeCheckbox.checked = false;
-    rainbowMode = false;
+    resetCheckboxes();
 });
 

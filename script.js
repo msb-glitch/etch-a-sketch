@@ -14,9 +14,11 @@ const rainbowModeCheckbox = document.querySelector('input[name=rainbowmodecheckb
 const startOver = document.querySelector('.startover button');
 const bubblePops = document.querySelectorAll('audio');
 const soundMode = document.querySelector('.soundmode');
-let mute = false;
+let mute = true;
 let rainbowMode = false;
 let colorIndex = 0;
+
+
 
 createGridBox(gridDimension);
 

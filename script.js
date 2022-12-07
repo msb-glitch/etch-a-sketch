@@ -1,7 +1,6 @@
 const grid = document.querySelector('.grid');
 let gridBox = [];
-
-const rainbowColors = ['#ff0000', '#ff5300', '#ffa500', '#ffd200', '#ffff00', '#80c000', '#008000', '#004080', '#0000ff', '#2600c1', 'blueviolet', 'hotpink', 'white', 'black'];
+const rainbowColors = ['#ff0000', '#ff5300', '#ffa500', '#ffd200', '#ffff00', '#80c000', '#008000', '#004080', '#0000ff', '#2600c1', '#4b0082', 'pink', 'white', 'black'];
 let bgColor = '#ff0000';
 let lastPickedColor = bgColor;
 const bodyBackgroundColor = window.getComputedStyle(document.body, null).getPropertyValue('background-color');
@@ -30,7 +29,6 @@ function createGridBox(size) {
         gridBox[i].classList.add('gridbox');
         grid.appendChild(gridBox[i]);
     }
-    
     changeColorMode(colorMode, '');
 }
 
@@ -126,16 +124,16 @@ startOver.addEventListener('click', () => {
     bgColor = lastPickedColor;
 })
 soundMode.addEventListener('click', () => {
-    if (mute) {
-        document.querySelector('.material-symbols-outlined').textContent = 'volume_up';
-        document.querySelector('.soundstatus').textContent = 'Sound on';
-        mute = false;
-
-    }
-    else {
+    if (!mute) {
         document.querySelector('.material-symbols-outlined').textContent = 'volume_off';
         document.querySelector('.soundstatus').textContent = 'Sound off';
         mute = true;
+
+    }
+    else {
+        document.querySelector('.material-symbols-outlined').textContent = 'volume_up';
+        document.querySelector('.soundstatus').textContent = 'Sound on';
+        mute = false;
     }
 })
 

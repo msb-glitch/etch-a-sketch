@@ -12,9 +12,11 @@
      background: lightskyblue;
      font-size: 2em;
  }
-input{
-    cursor: pointer;
-}
+
+ input {
+     cursor: pointer;
+ }
+
  .header {
      display: flex;
  }
@@ -33,9 +35,10 @@ input{
  .content .leftside {
      flex-basis: 19%;
  }
- .content .leftside{
-    display:flex;
-    flex-direction: column;
+
+ .content .leftside {
+     display: flex;
+     flex-direction: column;
  }
 
  .header .rightside {
@@ -79,7 +82,7 @@ input{
      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
      margin: 2px;
  }
- 
+
 
  .filledin {
      background-color: blue;
@@ -140,15 +143,28 @@ input{
      margin-right: 20px;
      vertical-align: middle;
      margin-left: 4px;
-     
+
  }
- .erasemode{
-    margin-bottom: auto;
+
+ .erasemode {
+     margin-bottom: auto;
  }
- 
-/* startover button */
+
+ /* startover and mute area */
+ .startover {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     justify-content: center;
+     gap: 10px;
+ }
+
+ .soundmode {
+     cursor: pointer;
+ }
+
  .startover button {
-     align-self: flex-end;
+
      background: transparent;
      padding: 10px;
      font-family: 'Amatic SC', cursive;
@@ -162,9 +178,10 @@ input{
      border: 2px solid black;
      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
  }
- .startover button:hover{
-    box-shadow:2px 8px 4px -6px hsla(0,0%,0%,.3);
-    cursor:pointer;
+
+ .startover button:hover {
+     box-shadow: 2px 8px 4px -6px hsla(0, 0%, 0%, .3);
+     cursor: pointer;
  }
 
  /* coloris */

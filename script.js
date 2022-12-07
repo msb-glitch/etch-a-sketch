@@ -13,7 +13,7 @@ const eraseModeCheckbox = document.querySelector('input[name=erasemodecheckbox')
 const rainbowModeCheckbox = document.querySelector('input[name=rainbowmodecheckbox');
 const startOver = document.querySelector('.startover button');
 const bubblePops = document.querySelectorAll('audio');
-
+const soundMode = document.querySelector('.soundmode');
 let mute = false;
 let rainbowMode = false;
 let colorIndex = 0;
@@ -122,6 +122,19 @@ startOver.addEventListener('click', () => {
     createGridBox(gridDimension);
     resetCheckboxes();
     bgColor = lastPickedColor;
+})
+soundMode.addEventListener('click',()=> {
+    if (mute){
+        document.querySelector('.material-symbols-outlined').textContent = 'volume_up';
+        document.querySelector('.soundstatus').textContent = 'Sound on';
+        mute = false;
+     
+    }
+    else{
+        document.querySelector('.material-symbols-outlined').textContent = 'volume_off';
+        document.querySelector('.soundstatus').textContent = 'Sound off';
+        mute = true;
+    }
 })
 
 /* coloris setup */

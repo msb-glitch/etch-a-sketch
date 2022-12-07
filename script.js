@@ -6,8 +6,7 @@ let lastPickedColor = bgColor;
 const bodyBackgroundColor = window.getComputedStyle(document.body, null).getPropertyValue('background-color');
 const gridSlider = document.querySelector("input[name=gridSlider]");
 let gridDimension = gridSlider.value;
-let gridWidth = grid.offsetWidth;
-let gridHeight = grid.offsetHeight;
+
 let colorMode = document.querySelector('input[name=colorModeRadio]:checked').value;
 const eraseModeCheckbox = document.querySelector('input[name=erasemodecheckbox');
 const rainbowModeCheckbox = document.querySelector('input[name=rainbowmodecheckbox');

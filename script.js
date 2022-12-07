@@ -58,6 +58,9 @@ function fillSquare() {
     else {
         this.style.backgroundColor = bgColor;
     }
+
+    // add sound to fill
+    // add sound off mode
 }
 function resetCheckboxes() {
     eraseModeCheckbox.checked = false;

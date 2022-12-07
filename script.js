@@ -12,7 +12,9 @@ let colorMode = document.querySelector('input[name=colorModeRadio]:checked').val
 const eraseModeCheckbox = document.querySelector('input[name=erasemodecheckbox');
 const rainbowModeCheckbox = document.querySelector('input[name=rainbowmodecheckbox');
 const startOver = document.querySelector('.startover button');
+const bubblePops = document.querySelectorAll('audio');
 
+let mute = false;
 let rainbowMode = false;
 let colorIndex = 0;
 
@@ -58,9 +60,17 @@ function fillSquare() {
     else {
         this.style.backgroundColor = bgColor;
     }
-
-    // add sound to fill
+    playSound();
+    
+    
     // add sound off mode
+}
+
+function playSound(){
+    if (mute) return; // stop if muted
+    let audio = bubblePops[Math.floor(Math.random()*bubblePops.length)];
+    audio.play();
+    
 }
 function resetCheckboxes() {
     eraseModeCheckbox.checked = false;

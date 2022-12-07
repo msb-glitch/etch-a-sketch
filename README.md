@@ -9,7 +9,11 @@ The color picking widget is Coloris, used under MIT License: https://github.com/
 
 Sketch-like border style from: https://codepen.io/tmrDevelops/pen/VeRvKX 
 
+playSound function idea from Javascript30 drumkit lesson: https://github.com/wesbos/JavaScript30
+
 Bubble pop sounds licensed under CC BY 4.0.
 Source: https://freesound.org/people/Abacagi/sounds/497198/
 Creator: Abacagi
 Original file contained 6 sounds in one file and was divided into six separate files for this project.
+
+Live demo: https://msb-glitch.github.io/etch-a-sketch/

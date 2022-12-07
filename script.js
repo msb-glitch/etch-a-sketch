@@ -14,7 +14,7 @@ const rainbowModeCheckbox = document.querySelector('input[name=rainbowmodecheckb
 const startOver = document.querySelector('.startover button');
 const bubblePops = document.querySelectorAll('audio');
 const soundMode = document.querySelector('.soundmode');
-let mute = true;
+let mute = true; // start muted; when started with sound on, sound doesn't work on first load
 let rainbowMode = false;
 let colorIndex = 0;
 
@@ -63,9 +63,6 @@ function fillSquare() {
         this.style.backgroundColor = bgColor;
     }
     playSound();
-
-
-    // add sound off mode
 }
 
 function playSound() {
